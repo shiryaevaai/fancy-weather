@@ -1,0 +1,21 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    @extend %font-prim;
+}
+
+h2 {
+    @include font($size: 3rem, $height: 1.8rem);
+}
+
+.hide {
+    height:0;
+    display: none;
+}
+
+.bottom-line {
+    display: flex;
+    height: 6px;
+}
