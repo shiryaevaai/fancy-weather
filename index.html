@@ -9,5 +9,78 @@
 </head>
 <body>
 	<!--<script type="text/javascript" src="code.js"></script>-->
+	<header class="header hide">
+		<h1>Fancy weather</h1>
+	</header>
+	<div>
+		<div class="main-info">
+			<div class="navigation">
+				<div class="navigation-inner">
+					btns
+				</div>
+			</div>
+			<div class="current-location">
+				<h2 class="location">Minsk, Belarus</h2>
+			</div>
+			<div class="current-datetime">
+				<span class="date">Mon 28 October</span>
+				<span class="time">17:23</span>
+			</div>
+			<div class="current-weather">
+				<div class="current-weather__temperature">+29</div>
+				<div class="current-weather__details">
+					<div class="current-weather__icon">sun</div>
+					<div class="details">
+						<span class="clouds">PARTLY CLOUDY</span>
+						<span class="feels-like-title">FEELS LIKE: </span><span class="feels-like">+30°</span>
+						<span class="wind-title">WIND: </span><span class="wind">6 M/S</span>
+						<span class="humidity-title">HUMIDITY: </span><span class="humidity">49%</span>
+					</div>
+				</div>
+			</div>
+			<div class="short-info">
+				<div class="current-weather__day1">
+					<h3 class="short-info__header">THURSDAY</h3>
+					<div class="short-info__detais">
+						<div class="short-info__temperature">+32</div>
+						<div class="short-info__icon">SUN</div>
+					</div>
+				</div>
+				<div class="current-weather__day2">
+					<h3 class="short-info__header">THURSDAY</h3>
+					<div class="short-info__detais">
+						<div class="short-info__temperature">+32</div>
+						<div class="short-info__icon">SUN</div>
+					</div>
+				</div>
+				<div class="current-weather__day3">
+					<h3 class="short-info__header">THURSDAY</h3>
+					<div class="short-info__detais">
+						<div class="short-info__temperature">+32</div>
+						<div class="short-info__icon">SUN</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="location-info">
+			<div class="search-container">
+				<form action="/" method="post">
+					<input type="text" name="name" placeholder="Search city" />
+					<input type="submit" name="search" value="Search" />
+				</form>
+			</div>
+			<div class="map-container">
+				map
+			</div>
+			<div class="coordinates-container">
+				<div class="latitude-container">
+					<span class="latitude__title">Latitude: </span><span class="latitude">53°54'</span>
+				</div>
+				<div class="longitude-container">
+					<span class="longitude__title">Longitude: </span><span class="longitude">27°34'</span>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
