@@ -350,23 +350,23 @@ figure {
 }
 
 @font-face {
-  font-family: Black;
+  font-family: Montserrat-Black;
   src: url("assets/fonts/Montserrat-Black.ttf");
 }
 @font-face {
-  font-family: Light;
+  font-family: Montserrat-Light;
   src: url("assets/fonts/Montserrat-Light.ttf");
 }
 @font-face {
-  font-family: Semibold;
+  font-family: Montserrat-Semibold;
   src: url("assets/fonts/Montserrat-Semibold.ttf");
 }
 @font-face {
-  font-family: Bold;
+  font-family: Montserrat-Bold;
   src: url("assets/fonts/Montserrat-Semibold.ttf");
 }
 body {
-  font-family: "Black", Arial, sans-serif;
+  font-family: "Montserrat-Black", Arial, sans-serif;
 }
 
 html {
@@ -474,6 +474,22 @@ h2 {
   justify-content: space-between;
   align-content: flex-start;
   margin: 0 auto;
+}
+
+.current-weather {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin: 0 auto;
+}
+
+.current-weather__temperature {
+  flex-basis: 60%;
+}
+
+.current-weather__details {
+  flex-basis: 40%;
 }
 
 /*# sourceMappingURL=style.css.map */

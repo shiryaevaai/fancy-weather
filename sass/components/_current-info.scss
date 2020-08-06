@@ -1,0 +1,15 @@
+.current-weather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin: 0 auto;
+}
+
+.current-weather__temperature {
+    flex-basis: 60%;
+}
+
+.current-weather__details {
+    flex-basis: 40%;
+}
