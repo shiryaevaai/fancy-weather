@@ -15,30 +15,30 @@
 	</header>
 	<div class="wrapper">
 		<!--<div class="navigation">-->
-		<div class="navbar column-left">
+		<div class="navigation column-left">
 			<div class="btn-group" role="group" aria-label="">
-				<button type="button" class="btn btn-secondary">
+				<button type="button" class="btn btn-secondary btn-refresh">
 					<img src="assets/icons/spinner.svg" alt="" fill="#FFFFFF" class="button-icon" title="Refresh background">
 				</button>
 			</div>
-			<div class="dropdown">
+			<div class="btn-group dropdown btn-lang">
 				<button class="btn btn-secondary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
 					EN
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">EN</a></li>
-					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">RU</a></li>
-					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">BE</a></li>
+					<li class="dropdown-item" role="presentation"><a role="menuitem" tabindex="-1" href="#">EN</a></li>
+					<li class="dropdown-item" role="presentation"><a role="menuitem" tabindex="-1" href="#">RU</a></li>
+					<li class="dropdown-item" role="presentation"><a role="menuitem" tabindex="-1" href="#">BE</a></li>
 				</ul>
 			</div>
 			<div class="btn-group" role="group" aria-label="">
-				<button type="button" class="btn btn-secondary">°F</button>
-				<button type="button" class="btn btn-secondary">°C</button>
+				<button type="button" class="btn btn-secondary btn-degree">°F</button>
+				<button type="button" class="btn btn-secondary btn-degree">°C</button>
 			</div>
 		</div>
 		<div class="search-container column-right">
-			<form action="/" method="post">
+			<form action="/" method="post" class="form-group">
 				<input type="text" name="name" placeholder="Search city" />
 				<input type="submit" name="search" value="Search" />
 			</form>
