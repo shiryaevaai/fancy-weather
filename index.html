@@ -5,6 +5,7 @@
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Fancy weather</title>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,15 +15,34 @@
 	</header>
 	<div class="wrapper">
 		<!--<div class="navigation">-->
-			<div class="navbar column-left">
-				btns
+		<div class="navbar column-left">
+			<div class="btn-group" role="group" aria-label="">
+				<button type="button" class="btn btn-secondary">
+					<img src="assets/icons/spinner.svg" alt="" fill="#FFFFFF" class="button-icon" title="Refresh background">
+				</button>
 			</div>
-			<div class="search-container column-right">
-				<form action="/" method="post">
-					<input type="text" name="name" placeholder="Search city" />
-					<input type="submit" name="search" value="Search" />
-				</form>
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+					EN
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">EN</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">RU</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">BE</a></li>
+				</ul>
 			</div>
+			<div class="btn-group" role="group" aria-label="">
+				<button type="button" class="btn btn-secondary">°F</button>
+				<button type="button" class="btn btn-secondary">°C</button>
+			</div>
+		</div>
+		<div class="search-container column-right">
+			<form action="/" method="post">
+				<input type="text" name="name" placeholder="Search city" />
+				<input type="submit" name="search" value="Search" />
+			</form>
+		</div>
 		<!--</div>-->
 	</div>
 	<div class="wrapper">
@@ -84,5 +104,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -390,6 +390,11 @@ h2 {
   height: 6px;
 }
 
+.button-icon {
+  width: 32px;
+  height: 32px;
+}
+
 .wrapper {
   max-width: 1197px;
   margin: auto;
