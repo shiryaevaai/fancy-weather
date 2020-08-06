@@ -12,13 +12,21 @@
 	<header class="header hide">
 		<h1>Fancy weather</h1>
 	</header>
-	<div>
-		<div class="main-info">
-			<div class="navigation">
-				<div class="navigation-inner">
-					btns
-				</div>
+	<div class="wrapper">
+		<!--<div class="navigation">-->
+			<div class="navbar column-left">
+				btns
 			</div>
+			<div class="search-container column-right">
+				<form action="/" method="post">
+					<input type="text" name="name" placeholder="Search city" />
+					<input type="submit" name="search" value="Search" />
+				</form>
+			</div>
+		<!--</div>-->
+	</div>
+	<div class="wrapper">
+		<div class="main-info column-left">
 			<div class="current-location">
 				<h2 class="location">Minsk, Belarus</h2>
 			</div>
@@ -62,13 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="location-info">
-			<div class="search-container">
-				<form action="/" method="post">
-					<input type="text" name="name" placeholder="Search city" />
-					<input type="submit" name="search" value="Search" />
-				</form>
-			</div>
+		<div class="location-info column-right">
 			<div class="map-container">
 				map
 			</div>

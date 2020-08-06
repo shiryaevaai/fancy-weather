@@ -4,4 +4,37 @@
     /*@include media-laptop {
         padding: 0 30px;
     }*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    /*margin: 0 auto;*/
+}
+
+.column-left {
+    @include media-laptop {
+        flex-basis: 60%;
+    }
+
+    @include media-tablet {
+        flex-basis: 100%;
+    }
+
+    @include media-mobile {
+        flex-basis: 100%;
+    }
+}
+
+.column-right {
+    @include media-laptop {
+        flex-basis: 40%;
+    }
+
+    @include media-tablet {
+        flex-basis: 100%;
+    }
+
+    @include media-mobile {
+        flex-basis: 100%;
+    }
 }
