@@ -7,9 +7,39 @@
 }
 
 .current-weather__temperature {
-    flex-basis: 60%;
+    flex-basis: 65%;
 }
 
 .current-weather__details {
-    flex-basis: 40%;
+    flex-basis: 35%;
+}
+
+.current-location {
+    padding-top: 30px;
+    
+    > h2 {
+        @extend %font-semibold;
+        @include font($size: 4.4rem, $height: 5rem);
+    }
+}
+
+.current-datetime {
+    padding-top: 10px;
+    @extend %font-regular;
+    @include font($size: 2.4rem, $height: 3rem);
+}
+
+.current-weather__temperature {
+    @extend %font-semibold;
+    display: flex;
+}
+
+.temperature-num {
+    @include font($size: 30rem, $height: 30rem);
+    display: inline-block;
+}
+
+.temperature-degree {
+    @include font($size: 10rem, $height: 10rem);
+    display: inline-block;
 }

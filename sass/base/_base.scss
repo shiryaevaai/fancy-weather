@@ -4,11 +4,13 @@ html {
 
 body {
     @extend %font-prim;
+    background-color:darkgreen;
+    color:white;
 }
 
-h2 {
+/*h2 {
     @include font($size: 3rem, $height: 1.8rem);
-}
+}*/
 
 .hide {
     height:0;
