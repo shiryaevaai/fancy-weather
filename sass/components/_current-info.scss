@@ -7,20 +7,8 @@
 }
 
 .current-weather__temperature {
-
     @extend %font-semibold;
-
-    /*@include media-laptop {
-        flex-basis: 65%;
-    }
-
-    @include media-tablet {
-        flex-basis: 100%;
-    }
-
-    @include media-mobile {
-        flex-basis: 100%;
-    }*/
+    padding-top: 60px;
 }
 
 .temperature-container {
@@ -28,19 +16,8 @@
 }
 
 .current-weather__details {
-    flex-basis: 35%;
-    /*@extend %font-semibold;*/
-    /*@include media-laptop {
-        flex-basis: 35%;
-    }
-
-    @include media-tablet {
-        flex-basis: 100%;
-    }
-
-    @include media-mobile {
-        flex-basis: 100%;
-    }*/
+    @extend %font-semibold;
+    @include font($size: 2.2rem, $height: 3.7rem);
 }
 
 .current-location {

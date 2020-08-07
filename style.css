@@ -369,7 +369,7 @@ body {
   font-family: "Montserrat-Black", Arial, sans-serif;
 }
 
-.current-location > h2, .current-weather__temperature {
+.current-location > h2, .current-weather__details, .current-weather__temperature {
   font-family: "Montserrat-Semibold", Arial, sans-serif;
 }
 
@@ -623,17 +623,7 @@ body {
 }
 
 .current-weather__temperature {
-  /*@include media-laptop {
-      flex-basis: 65%;
-  }
-
-  @include media-tablet {
-      flex-basis: 100%;
-  }
-
-  @include media-mobile {
-      flex-basis: 100%;
-  }*/
+  padding-top: 60px;
 }
 
 .temperature-container {
@@ -641,19 +631,10 @@ body {
 }
 
 .current-weather__details {
-  flex-basis: 35%;
-  /*@extend %font-semibold;*/
-  /*@include media-laptop {
-      flex-basis: 35%;
-  }
-
-  @include media-tablet {
-      flex-basis: 100%;
-  }
-
-  @include media-mobile {
-      flex-basis: 100%;
-  }*/
+  font-size: 2.2rem;
+  line-height: 3.7rem;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .current-location {
