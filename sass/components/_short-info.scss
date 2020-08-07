@@ -1,5 +1,6 @@
 .short-info {
     padding-top: 40px;
+    padding-bottom: 20px;
     @extend %font-semibold;
 
     > h3 {
@@ -17,6 +18,17 @@
 
 .short-info__temperature {
     @include font($size: 6rem, $height: 7.8rem);
+
+    @include media-laptop {
+        @include font($size: 3.5rem, $height: 7rem);
+    }
+
+    @include media-tablet {
+        @include font($size: 3.5rem, $height: 7rem);
+    }
+    /*@include media-mobile {
+        @include font($size: 4rem, $height: 5.8rem);
+    }*/
 }
 
 .short-info__temperature, .short-info__icon {
@@ -32,6 +44,11 @@
 .short-info__icon img {
     width: 88px;
     height: 88px;
+
+    @include media-laptop {
+        width: 65px;
+        height: 65px;
+    }
 }
 
 .current-weather__day {

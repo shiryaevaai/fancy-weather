@@ -369,7 +369,7 @@ body {
   font-family: "Montserrat-Black", Arial, sans-serif;
 }
 
-.short-info, .current-location > h2, .current-weather__details, .current-weather__temperature {
+.coordinates-container, .short-info, .current-location > h2, .current-weather__details, .current-weather__temperature {
   font-family: "Montserrat-Semibold", Arial, sans-serif;
 }
 
@@ -408,16 +408,18 @@ body {
   max-width: 1197px;
   margin: auto;
   padding: 0 73px;
-  /*@include media-laptop {
-      padding: 0 30px;
-  }*/
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 10px;
+  }
 }
 
 .columns {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: flex-start;
+  /*align-content: flex-start;*/
   margin: 0 auto;
 }
 
@@ -429,7 +431,7 @@ body {
 }
 @media (max-width: 1197px) {
   .column-left {
-    flex-basis: 60%;
+    flex-basis: 53%;
   }
 }
 @media (max-width: 768px) {
@@ -451,7 +453,7 @@ body {
 }
 @media (max-width: 1197px) {
   .column-right {
-    flex-basis: 40%;
+    flex-basis: 38%;
   }
 }
 @media (max-width: 768px) {
@@ -523,6 +525,10 @@ body {
 
 .search-container {
   padding-top: 40px;
+  /*align-content: flex-end;*/
+  position: relative;
+  display: flex;
+  text-align: left;
 }
 
 .dropdown-item {
@@ -661,6 +667,14 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+@media (max-width: 320px) {
+  .current-location > h2 {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
 
 .current-datetime {
   padding-top: 10px;
@@ -677,17 +691,54 @@ body {
   font-style: normal;
   display: inline-block;
 }
+@media (max-width: 1197px) {
+  .temperature-num {
+    font-size: 20rem;
+    line-height: 20rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+@media (max-width: 768px) {
+  .temperature-num {
+    font-size: 15rem;
+    line-height: 15rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+@media (max-width: 320px) {
+  .temperature-num {
+    font-size: 10rem;
+    line-height: 10rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
 
 .temperature-degree {
-  font-size: 10rem;
-  line-height: 10rem;
+  font-size: 15rem;
+  line-height: 15rem;
   font-weight: normal;
   font-style: normal;
   display: inline-block;
 }
+@media (max-width: 768px) {
+  .temperature-degree {
+    font-size: 5rem;
+    line-height: 5rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.details {
+  width: 200px;
+}
 
 .short-info {
   padding-top: 40px;
+  padding-bottom: 20px;
 }
 .short-info > h3 {
   font-size: 2.2rem;
@@ -709,6 +760,25 @@ body {
   line-height: 7.8rem;
   font-weight: normal;
   font-style: normal;
+  /*@include media-mobile {
+      @include font($size: 4rem, $height: 5.8rem);
+  }*/
+}
+@media (max-width: 1197px) {
+  .short-info__temperature {
+    font-size: 3.5rem;
+    line-height: 7rem;
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+@media (max-width: 768px) {
+  .short-info__temperature {
+    font-size: 3.5rem;
+    line-height: 7rem;
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 .short-info__temperature, .short-info__icon {
@@ -720,6 +790,42 @@ body {
 .short-info__icon img {
   width: 88px;
   height: 88px;
+}
+@media (max-width: 1197px) {
+  .short-info__icon img {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.map-container {
+  padding-top: 30px;
+}
+
+.map-iframe {
+  height: 375px;
+  width: 300px;
+  border-radius: 5%;
+}
+@media (max-width: 1197px) {
+  .map-iframe {
+    height: 300px;
+    width: 250px;
+  }
+}
+
+.coordinates-container {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: normal;
+  font-style: normal;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  /*text-align: right;
+
+  @include media-tablet {
+      text-align: left;
+  }*/
 }
 
 /*# sourceMappingURL=style.css.map */

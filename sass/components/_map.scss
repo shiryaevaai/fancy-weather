@@ -1,0 +1,29 @@
+.map-container {
+    padding-top: 30px;
+
+
+}
+
+.map-iframe {
+    height: 375px;
+    width: 300px;
+
+    @include media-laptop {
+        height: 300px;
+        width: 250px;
+    }
+
+    border-radius: 5%;
+}
+
+.coordinates-container {
+    @extend %font-semibold;
+    @include font($size: 2rem, $height: 3rem);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    /*text-align: right;
+
+    @include media-tablet {
+        text-align: left;
+    }*/
+}

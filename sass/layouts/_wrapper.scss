@@ -2,9 +2,10 @@
     max-width: $content-width;
     margin: auto;
     padding: 0 73px;
-    /*@include media-laptop {
-        padding: 0 30px;
-    }*/
+    
+    @include media-tablet {
+        padding: 0 10px;
+    }
 
 }
 
@@ -12,7 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: flex-start;
+    /*align-content: flex-start;*/
     margin: 0 auto;
 }
 
@@ -24,7 +25,7 @@
     /*text-align: center;*/
     
     @include media-laptop {
-        flex-basis: 60%;
+        flex-basis: 53%;
     }
 
     @include media-tablet {
@@ -43,7 +44,7 @@
 
     /*text-align: center;*/
     @include media-laptop {
-        flex-basis: 40%;
+        flex-basis: 38%;
     }
 
     @include media-tablet {

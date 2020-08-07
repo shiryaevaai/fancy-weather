@@ -23,10 +23,14 @@
 
 .current-location {
     padding-top: 30px;
-    
+
     > h2 {
         @extend %font-semibold;
         @include font($size: 4.4rem, $height: 5rem);
+
+        @include media-mobile {
+            @include font($size: 2.4rem, $height: 3rem);
+        }
     }
 }
 
@@ -38,10 +42,32 @@
 
 .temperature-num {
     @include font($size: 25rem, $height: 25rem);
+
+    @include media-laptop {
+        @include font($size: 20rem, $height: 20rem);
+    }
+
+    @include media-tablet {
+        @include font($size: 15rem, $height: 15rem);
+    }
+
+    @include media-mobile {
+        @include font($size: 10rem, $height: 10rem);
+    }
+
     display: inline-block;
 }
 
 .temperature-degree {
-    @include font($size: 10rem, $height: 10rem);
+    @include font($size: 15rem, $height: 15rem);
+
+    @include media-tablet {
+        @include font($size: 5rem, $height: 5rem);
+    }
+
     display: inline-block;
+}
+
+.details {
+    width:200px;
 }
