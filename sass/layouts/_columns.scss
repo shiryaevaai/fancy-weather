@@ -4,6 +4,10 @@
 
 .layout-3-column {
     @include columns($width: 30%);
+
+    @include media-tablet {
+        @include columns($width: 100%);
+    }
 }
 
 .layout-2-column {

@@ -1,0 +1,39 @@
+.short-info {
+    padding-top: 40px;
+    @extend %font-semibold;
+
+    > h3 {
+        @include font($size: 2.2rem, $height: 2.7rem);
+    }
+}
+
+.short-info__detais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 0 auto;
+}
+
+.short-info__temperature {
+    @include font($size: 6rem, $height: 7.8rem);
+}
+
+.short-info__temperature, .short-info__icon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.short-info__icon {
+
+}
+
+.short-info__icon img {
+    width: 88px;
+    height: 88px;
+}
+
+.current-weather__day {
+
+}

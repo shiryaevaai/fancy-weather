@@ -369,7 +369,7 @@ body {
   font-family: "Montserrat-Black", Arial, sans-serif;
 }
 
-.current-location > h2, .current-weather__details, .current-weather__temperature {
+.short-info, .current-location > h2, .current-weather__details, .current-weather__temperature {
   font-family: "Montserrat-Semibold", Arial, sans-serif;
 }
 
@@ -425,6 +425,7 @@ body {
   display: flex;
   position: relative;
   margin-left: 0;
+  /*text-align: center;*/
 }
 @media (max-width: 1197px) {
   .column-left {
@@ -446,6 +447,7 @@ body {
   display: flex;
   position: relative;
   margin-right: 0;
+  /*text-align: center;*/
 }
 @media (max-width: 1197px) {
   .column-right {
@@ -483,6 +485,18 @@ body {
 }
 .layout-3-column > * {
   flex-basis: 30%;
+}
+@media (max-width: 768px) {
+  .layout-3-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin: 0 auto;
+  }
+  .layout-3-column > * {
+    flex-basis: 100%;
+  }
 }
 
 .layout-2-column {
@@ -635,6 +649,7 @@ body {
   line-height: 3.7rem;
   font-weight: normal;
   font-style: normal;
+  /*display: inline-block;*/
 }
 
 .current-location {
@@ -669,6 +684,42 @@ body {
   font-weight: normal;
   font-style: normal;
   display: inline-block;
+}
+
+.short-info {
+  padding-top: 40px;
+}
+.short-info > h3 {
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.short-info__detais {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 0 auto;
+}
+
+.short-info__temperature {
+  font-size: 6rem;
+  line-height: 7.8rem;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.short-info__temperature, .short-info__icon {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.short-info__icon img {
+  width: 88px;
+  height: 88px;
 }
 
 /*# sourceMappingURL=style.css.map */
