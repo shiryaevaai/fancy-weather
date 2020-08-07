@@ -369,7 +369,7 @@ body {
   font-family: "Montserrat-Black", Arial, sans-serif;
 }
 
-.current-weather__temperature, .current-location > h2 {
+.current-location > h2, .current-weather__temperature {
   font-family: "Montserrat-Semibold", Arial, sans-serif;
 }
 
@@ -411,13 +411,21 @@ body {
   /*@include media-laptop {
       padding: 0 30px;
   }*/
+}
+
+.columns {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
-  /*margin: 0 auto;*/
+  margin: 0 auto;
 }
 
+.column-left {
+  display: flex;
+  position: relative;
+  margin-left: 0;
+}
 @media (max-width: 1197px) {
   .column-left {
     flex-basis: 60%;
@@ -434,6 +442,11 @@ body {
   }
 }
 
+.column-right {
+  display: flex;
+  position: relative;
+  margin-right: 0;
+}
 @media (max-width: 1197px) {
   .column-right {
     flex-basis: 40%;
@@ -610,11 +623,37 @@ body {
 }
 
 .current-weather__temperature {
-  flex-basis: 65%;
+  /*@include media-laptop {
+      flex-basis: 65%;
+  }
+
+  @include media-tablet {
+      flex-basis: 100%;
+  }
+
+  @include media-mobile {
+      flex-basis: 100%;
+  }*/
+}
+
+.temperature-container {
+  display: flex;
 }
 
 .current-weather__details {
   flex-basis: 35%;
+  /*@extend %font-semibold;*/
+  /*@include media-laptop {
+      flex-basis: 35%;
+  }
+
+  @include media-tablet {
+      flex-basis: 100%;
+  }
+
+  @include media-mobile {
+      flex-basis: 100%;
+  }*/
 }
 
 .current-location {
@@ -635,13 +674,9 @@ body {
   font-style: normal;
 }
 
-.current-weather__temperature {
-  display: flex;
-}
-
 .temperature-num {
-  font-size: 30rem;
-  line-height: 30rem;
+  font-size: 25rem;
+  line-height: 25rem;
   font-weight: normal;
   font-style: normal;
   display: inline-block;

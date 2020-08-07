@@ -5,14 +5,22 @@
     /*@include media-laptop {
         padding: 0 30px;
     }*/
+
+}
+
+.columns {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: flex-start;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
 }
 
 .column-left {
+    display: flex;
+    position: relative;
+    margin-left: 0;
+
     @include media-laptop {
         flex-basis: 60%;
     }
@@ -27,6 +35,10 @@
 }
 
 .column-right {
+    display: flex;
+    position: relative;
+    margin-right: 0;
+
     @include media-laptop {
         flex-basis: 40%;
     }

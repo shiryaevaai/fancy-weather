@@ -7,11 +7,40 @@
 }
 
 .current-weather__temperature {
-    flex-basis: 65%;
+
+    @extend %font-semibold;
+
+    /*@include media-laptop {
+        flex-basis: 65%;
+    }
+
+    @include media-tablet {
+        flex-basis: 100%;
+    }
+
+    @include media-mobile {
+        flex-basis: 100%;
+    }*/
+}
+
+.temperature-container {
+    display: flex;
 }
 
 .current-weather__details {
     flex-basis: 35%;
+    /*@extend %font-semibold;*/
+    /*@include media-laptop {
+        flex-basis: 35%;
+    }
+
+    @include media-tablet {
+        flex-basis: 100%;
+    }
+
+    @include media-mobile {
+        flex-basis: 100%;
+    }*/
 }
 
 .current-location {
@@ -29,13 +58,8 @@
     @include font($size: 2.4rem, $height: 3rem);
 }
 
-.current-weather__temperature {
-    @extend %font-semibold;
-    display: flex;
-}
-
 .temperature-num {
-    @include font($size: 30rem, $height: 30rem);
+    @include font($size: 25rem, $height: 25rem);
     display: inline-block;
 }
 
