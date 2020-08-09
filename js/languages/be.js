@@ -1,0 +1,9 @@
+export default {
+  feelLikeLabel: 'АДЧУВАЕЦЦА ЯК',
+  windLabel: 'ВЕЦЕР',
+  humidityLabel: 'ВІЛЬГОТНАСЦЬ',
+  searchPlaceholder: 'Знайсці горад ці індэкс',
+  searchButton: 'Пошук',
+  latitudeLabel: 'Шырата',
+  longitudeLabel: 'Даўгата',
+}

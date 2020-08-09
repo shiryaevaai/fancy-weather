@@ -382,7 +382,6 @@ html {
 }
 
 body {
-  background-color: darkgreen;
   color: white;
 }
 
@@ -465,6 +464,16 @@ body {
   .column-right {
     flex-basis: 100%;
   }
+}
+
+.background {
+  background-image: url(assets/background.jpg);
+  height: 100%;
+  position: relative;
+  opacity: 0.9;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .layout-4-column {
