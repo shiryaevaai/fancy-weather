@@ -17,7 +17,11 @@ async function f() {
     let weatherInfo = await openweathermap.getWeatherInfo(d.city, lang)
     console.log(weatherInfo);
     location.updateLocation(weatherInfo);
-    weather.updateWeather(weatherInfo, lang, degrees);
+    weather.updateWeatherDetailed(weatherInfo.list[0], lang, degrees);
+
+    for (var i = 1; i <= 3; i++) {
+      weather.updateWeatherShort(weatherInfo.list[i], i, lang, degrees);
+    }
   } catch (err) {
     // перехватит любую ошибку в блоке try: и в fetch, и в response.json
     console.log(err);

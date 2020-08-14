@@ -1,8 +1,8 @@
 import { convertFromCelciusToFahrenheit } from '../utils/degreeConverter.js';
 
-export function updateWeather(data, lang = 'en', degree = 'C') {
+export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
 
-  let temperature = data.list[0].main.temp.toString().split('.')[0];
+  let temperature = data.main.temp.toString().split('.')[0];
 
   if (degree == 'F') {
     temperature = convertFromCelciusToFahrenheit(temperature);
@@ -11,17 +11,46 @@ export function updateWeather(data, lang = 'en', degree = 'C') {
   let currentTemperature = document.getElementsByClassName('js-current-temperature')[0];
   currentTemperature.innerText = temperature > 0 ? '+' + temperature : temperature;
 
-  let currentWeatherIcon = getWeatherIcon(data.list[0].weather.icon);
+  let currentWeatherIcon = getWeatherIcon(data.weather[0].icon);
   let img = document.getElementsByClassName('js-current-overcast')[0];
   img.src = currentWeatherIcon;
-  //let latArray = data.city.coord.lat.toString().split('.');
-  //let lonArray = data.city.coord.lon.toString().split('.');
 
-  //let latitude = document.getElementsByClassName('js-location-latitude')[0];
-  //latitude.innerText = latArray[0] + '\xB0' + latArray[1].substr(0, 2) + '\'';
+  let clouds = data.weather[0].description.toUpperCase();
+  let cloudsItem = document.getElementsByClassName('js-clouds')[0];
+  cloudsItem.innerText = clouds;
 
-  //let longitude = document.getElementsByClassName('js-location-longitude')[0];
-  //longitude.innerText = lonArray[0] + '\xB0' + lonArray[1].substr(0, 2) + '\'';
+  let feelsLike = data.main.feels_like.toString().split('.')[0];
+  if (parseInt(feelsLike) > 0) {
+    feelsLike = '+' + feelsLike;
+  }
+  let feelsLikeItem = document.getElementsByClassName('js-feels-like')[0];
+  feelsLikeItem.innerText = feelsLike;
+
+  let humidity = data.main.humidity;
+  let humidityItem = document.getElementsByClassName('js-humidity')[0];
+  humidityItem.innerText = humidity;
+
+  let wind = data.wind.speed.toString().split('.')[0];
+  let windItem = document.getElementsByClassName('js-wind')[0];
+  windItem.innerText = wind;
+}
+
+export function updateWeatherShort(data, index, lang = 'en', degree = 'C') {
+  //js-short-info__header3
+  //js-short-info__temperature3
+  //js-short-info__icon3
+  let temperature = data.main.temp.toString().split('.')[0];
+
+  if (degree == 'F') {
+    temperature = convertFromCelciusToFahrenheit(temperature);
+  }
+
+  let currentTemperature = document.getElementsByClassName('js-short-info__temperature'+index)[0];
+  currentTemperature.innerText = temperature > 0 ? '+' + temperature : temperature;
+
+  let currentWeatherIcon = getWeatherIcon(data.weather[0].icon);
+  let img = document.getElementsByClassName('js-short-info__icon'+index)[0];
+  img.src = currentWeatherIcon;
 }
 
 
