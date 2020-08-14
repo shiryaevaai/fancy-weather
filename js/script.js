@@ -1,4 +1,4 @@
-import { get } from './storage.js';
+import * as storage from './storage.js';
 //import dictionaries from './dictionaries/index.js';
 import * as ipinfo from './api/ipinfo.js';
 import * as openweathermap from './api/openweathermap.js';
@@ -9,10 +9,12 @@ import * as weather from './modules/weather.js';
 import * as navigation from './modules/navigation.js';
 import * as language from './modules/language.js';
 
-const lang = get('lang', '"en"');
-const degrees = get('degrees', '"C"');
+var lang = storage.get('lang', '"en"');
+var degrees = storage.get('degrees', '"C"');
 
 var updateBackgroundButton;
+var switchToFButton;
+var switchToCButton;
 
 async function f() {
 
@@ -43,10 +45,41 @@ async function f() {
     }
 
 
-
     updateBackgroundButton = document.getElementById("update-background-button");
     updateBackgroundButton.onclick = navigation.updateBackground;
 
+    switchToFButton = document.getElementById("switch-to-f");
+    switchToCButton = document.getElementById("switch-to-c");
+
+    //if (degrees == '"C"') {
+    //  switchToCButton.classList.add("btn-selected");
+    //}
+    //else {
+    //  switchToFButton.classList.add("btn-selected");
+    //}
+
+    switchToFButton.onclick = function (event) {
+      degrees = '"F"';
+      //switchToFButton.classList.add("btn-selected");
+      //switchToCButton.classList.remove("btn-selected");
+
+      if (degrees != storage.get('degrees', '"C"')) {
+        storage.set('degrees', degrees);
+        navigation.updateDegrees();
+      }
+    };
+
+
+    switchToCButton.onclick = function (event) {
+      degrees = '"C"';
+      //switchToCButton.classList.add("btn-selected");
+      //switchToFButton.classList.remove("btn-selected");
+
+      if (degrees != storage.get('degrees', '"C"')) {
+        storage.set('degrees', degrees);
+        navigation.updateDegrees();
+      }
+    };
   } catch (err) {
     // перехватит любую ошибку в блоке try: и в fetch, и в response.json
     console.log(err);

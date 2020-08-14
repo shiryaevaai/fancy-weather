@@ -4,7 +4,7 @@ export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
 
   let temperature = data.main.temp.toString().split('.')[0];
 
-  if (degree == 'F') {
+  if (degree == '"F"') {
     temperature = convertFromCelciusToFahrenheit(temperature);
   }
 
@@ -20,6 +20,9 @@ export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
   cloudsItem.innerText = clouds;
 
   let feelsLike = data.main.feels_like.toString().split('.')[0];
+  if (degree == '"F"') {
+    feelsLike = convertFromCelciusToFahrenheit(feelsLike);
+  }
   if (parseInt(feelsLike) > 0) {
     feelsLike = '+' + feelsLike;
   }
@@ -38,7 +41,7 @@ export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
 export function updateWeatherShort(data, index, lang = 'en', degree = 'C') {
   let temperature = data.main.temp.toString().split('.')[0];
 
-  if (degree == 'F') {
+  if (degree == '"F"') {
     temperature = convertFromCelciusToFahrenheit(temperature);
   }
 

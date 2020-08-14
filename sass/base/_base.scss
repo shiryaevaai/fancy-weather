@@ -26,3 +26,13 @@ body {
     width: 32px;
     height: 32px;
 }
+
+.btn-secondary {
+    color: #fff;
+   // background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-selected {
+    background-color: red !important;
+}
