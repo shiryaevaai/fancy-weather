@@ -6,4 +6,11 @@ export default {
   searchButton: 'SEARCH',
   latitudeLabel: 'Latitude',
   longitudeLabel: 'Longitude',
+  mon: 'MONDAY',
+  tue: 'TUESDAY',
+  wen: 'WEDNESDAY',
+  thu: 'THURSDAY',
+  fri: 'FRIDAY',
+  sat: 'SATURDAY',
+  sun: 'SUNDAY',
 }

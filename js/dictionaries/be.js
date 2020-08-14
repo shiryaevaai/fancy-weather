@@ -6,4 +6,11 @@ export default {
   searchButton: 'Пошук',
   latitudeLabel: 'Шырата',
   longitudeLabel: 'Даўгата',
+  mon: 'MONDAY',
+  tue: 'TUESDAY',
+  wen: 'WEDNESDAY',
+  thu: 'THURSDAY',
+  fri: 'FRIDAY',
+  sat: 'SATURDAY',
+  sun: 'SUNDAY',
 }

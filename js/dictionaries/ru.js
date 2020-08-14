@@ -6,4 +6,11 @@ export default {
   searchButton: 'онхяй',
   latitudeLabel: 'ьХПНРЮ',
   longitudeLabel: 'дНКЦНРЮ',
+  mon: 'оюмъдгекюй',
+  tue: 'ю║рнпюй',
+  wen: 'яепюдю',
+  thu: 'вюжбеп',
+  fri: 'оърм╡жю',
+  sat: 'ясанрю',
+  sun: 'мъдгекъ',
 }

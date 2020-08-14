@@ -36,9 +36,6 @@ export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
 }
 
 export function updateWeatherShort(data, index, lang = 'en', degree = 'C') {
-  //js-short-info__header3
-  //js-short-info__temperature3
-  //js-short-info__icon3
   let temperature = data.main.temp.toString().split('.')[0];
 
   if (degree == 'F') {
