@@ -19,10 +19,10 @@ var switchToCButton;
 async function f() {
 
   try {
-    let img = await unsplash.getImage();
-    console.log(img);
-    document.getElementById("background").style.backgroundImage = "linear-gradient(rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%), url('" + img.urls.full + "')";
-
+    //let img = await unsplash.getImage();
+    //console.log(img);
+    //document.getElementsByTagName('body')[0].style.backgroundImage = "linear-gradient(rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%), url('" + img.urls.full + "')";
+    navigation.updateBackground();
 
     let d = await ipinfo.getIPInfo();
     console.log(d);
