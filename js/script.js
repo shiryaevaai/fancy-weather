@@ -2,13 +2,13 @@ import * as storage from './storage.js';
 import dictionaries from './dictionaries/index.js';
 import * as ipinfo from './api/ipinfo.js';
 import * as openweathermap from './api/openweathermap.js';
-import * as unsplash from './api/unsplash.js';
 import * as opencagedata from './api/opencagedata.js';
 
+import * as language from './modules/language.js';
 import * as location from './modules/location.js';
 import * as weather from './modules/weather.js';
 import * as navigation from './modules/navigation.js';
-import * as language from './modules/language.js';
+import * as date from './modules/date.js';
 
 var lang = storage.get('lang', '"en"');
 var degrees = storage.get('degrees', '"C"');
@@ -22,7 +22,7 @@ var searchButton;
 async function main() {
 
   try {
-    navigation.updateBackground();
+    await navigation.updateBackground();
 
     updateBackgroundButton = document.getElementById("update-background-button");
     updateBackgroundButton.onclick = navigation.updateBackground;
@@ -47,10 +47,10 @@ async function main() {
     let ipInfo = await ipinfo.getIPInfo();
     console.log(ipInfo);
     storage.set('location', ipInfo.city);
-    let weatherInfo = await openweathermap.getWeatherInfoByCityName(ipInfo.city, lang)
-    console.log(weatherInfo);
+    //let weatherInfo = await openweathermap.getWeatherInfoByCityName(ipInfo.city, lang)
+    //console.log(weatherInfo);
 
-    updatePageData(weatherInfo, lang);
+    await search(lang, ipInfo.city);
 
     //if (degrees == '"C"') {
     //  switchToCButton.classList.add("btn-selected");
@@ -60,17 +60,18 @@ async function main() {
     //}
 
     document.getElementById("switch-language-items").onclick = function (event) {
-      let newLang = '';
+      let newLang = lang;
+      let li = event.target.closest("li");
 
-      if (event.target.matches('#en-item')) {
+      if (li.matches('#en-item')) {
         newLang = 'en';
         switchLanguageButton.innerText = 'EN';
       }
-      if (event.target.matches('#ru-item')) {
+      if (li.matches('#ru-item')) {
         newLang = 'ru';
         switchLanguageButton.innerText = 'RU';
       }
-      if (event.target.matches('#be-item')) {
+      if (li.matches('#be-item')) {
         newLang = 'be';
         switchLanguageButton.innerText = 'BE';
       }
@@ -112,7 +113,7 @@ async function main() {
   }
 }
 
-async function updatePageData(weatherInfo, lang = 'en', isPageOverload = true) {
+async function updatePageData(name, country, weatherInfo, lang = 'en', isPageOverload = true) {
 
   if (!isPageOverload) {
     navigation.updateBackground();
@@ -120,10 +121,13 @@ async function updatePageData(weatherInfo, lang = 'en', isPageOverload = true) {
 
   language.updateLabels(lang);
 
-  location.updateLocation(weatherInfo.city);
+  var today = new Date(new Date().getTime() + weatherInfo.city.timezone);
+  location.updateLocation(name, country, weatherInfo.city);
+  date.updateDate(today, lang);
+  date.updateTime(today);
+
   weather.updateWeatherDetailed(weatherInfo.list[0], lang, degrees);
 
-  var today = new Date();
   let dayOfWeek = today.getDay();
 
   for (var i = 1; i <= 3; i++) {
@@ -133,16 +137,20 @@ async function updatePageData(weatherInfo, lang = 'en', isPageOverload = true) {
     }
 
     weather.updateWeatherShort(weatherInfo.list[i], i, lang, degrees);
-    language.updateDayOfWeek(dayOfWeekNext, i, lang);
+    date.updateDayOfWeek(dayOfWeekNext, i, lang);
   }
 }
 
-async function search(lang) {
+async function search(lang, query = '') {
   let searchInput = document.getElementsByClassName('js-search-input')[0];
-  let query = searchInput.value;
-  let response = await opencagedata.findLocation(query);
+  if (query == '') {
+    query = searchInput.value;
+  }
+ 
+  let response = await opencagedata.findLocation(query, lang);
 
   if (response.total_results == 0) {
+    searchInput.value = '';
     searchInput.placeholder = dictionaries[lang].locationNotFound;
   }
   else {
@@ -170,11 +178,10 @@ async function search(lang) {
         locationName = '';
     }
 
-    storage.set('location', locationName);
-    let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
+    storage.set('location', query);
+    let weatherInfo = await openweathermap.getWeatherInfoByCityName(query, lang);
 
-    //let weatherInfo = await openweathermap.getWeatherInfoByCoords(location.geometry.lat, location.geometry.lng, lang);
-    updatePageData(weatherInfo, lang, false);
+    await updatePageData(locationName, location.components.country, weatherInfo, lang, false);
   }
 }
 
@@ -182,8 +189,9 @@ async function switchLanguage(newLang) {
   storage.set('lang', newLang);
   lang = newLang;
   let locationName = storage.get('location', 'Moscow');
-  let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
-  updatePageData(weatherInfo, lang, false);
+  await search(lang, locationName);
+  //let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
+  //updatePageData(weatherInfo, lang, false);
 }
 
 main();

@@ -4,6 +4,7 @@ export async function getWeatherInfoByCityName(city, lang) {
   let url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&lang=' + lang + '&units=metric&cnt=4&APPID=' + appId;
   let res = await fetch(url);
   let data = await res.json();
+  console.log(data);
   console.log(url);
   return data;
 }

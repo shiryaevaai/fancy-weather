@@ -5,9 +5,14 @@ import * as degreeConverter from '../utils/degreeConverter.js';
 
 
 export async function updateBackground() {
-  let img = await unsplash.getImage();
-  console.log(img);
-  document.getElementsByTagName('body')[0].style.backgroundImage = "linear-gradient(rgba(8, 15, 26, 0.59) 100%, rgba(17, 17, 46, 0.46) 100%), url('" + img.urls.full + "')";
+  try {
+    let img = await unsplash.getImage();
+    console.log(img);
+    document.getElementsByTagName('body')[0].style.backgroundImage = "linear-gradient(rgba(8, 15, 26, 0.59) 100%, rgba(17, 17, 46, 0.46) 100%), url('" + img.urls.full + "')";
+
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export function updateDegrees() {
