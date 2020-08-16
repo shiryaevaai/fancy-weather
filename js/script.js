@@ -111,11 +111,25 @@ async function search(lang) {
     let location = response.results[0];
 
     let locationName = '';
-    if (location.components._type == 'city') {
-      locationName = location.components.city;
-    }
-    else {
-      //ToDo
+
+    switch (location.components._type) {
+      case 'city':
+        locationName = location.components.city;
+        break;
+      case 'village':
+        if (location.components.village != undefined) {
+          locationName = location.components.village;
+        }
+        else if (location.components.village != hamlet) {
+          locationName = location.components.hamlet;
+        }
+        
+        break;
+      case 'state':
+        locationName = location.components.state;
+        break;
+      default:
+        locationName = '';
     }
 
     let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
