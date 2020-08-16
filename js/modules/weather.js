@@ -2,7 +2,7 @@ import { convertFromCelciusToFahrenheit } from '../utils/degreeConverter.js';
 
 export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
 
-  let temperature = data.main.temp.toString().split('.')[0];
+  let temperature = Math.trunc(data.main.temp);
 
   if (degree == '"F"') {
     temperature = convertFromCelciusToFahrenheit(temperature);
@@ -19,7 +19,7 @@ export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
   let cloudsItem = document.getElementsByClassName('js-clouds')[0];
   cloudsItem.innerText = clouds;
 
-  let feelsLike = data.main.feels_like.toString().split('.')[0];
+  let feelsLike = Math.trunc(data.main.feels_like);
   if (degree == '"F"') {
     feelsLike = convertFromCelciusToFahrenheit(feelsLike);
   }
@@ -33,13 +33,13 @@ export function updateWeatherDetailed(data, lang = 'en', degree = 'C') {
   let humidityItem = document.getElementsByClassName('js-humidity')[0];
   humidityItem.innerText = humidity;
 
-  let wind = data.wind.speed.toString().split('.')[0];
+  let wind = Math.trunc(data.wind.speed);
   let windItem = document.getElementsByClassName('js-wind')[0];
   windItem.innerText = wind;
 }
 
 export function updateWeatherShort(data, index, lang = 'en', degree = 'C') {
-  let temperature = data.main.temp.toString().split('.')[0];
+  let temperature = Math.trunc(data.main.temp);
 
   if (degree == '"F"') {
     temperature = convertFromCelciusToFahrenheit(temperature);

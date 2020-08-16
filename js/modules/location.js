@@ -1,9 +1,9 @@
-export function updateLocation(data, lang = 'en') {
+export function updateLocation(city, lang = 'en') {
   let locationName = document.getElementsByClassName('js-location-name')[0];
-  locationName.innerText = data.city.name + ', ' + data.city.country;//tod0
+  locationName.innerText = city.name + ', ' + city.country;//tod0
 
-  let latArray = data.city.coord.lat.toString().split('.');
-  let lonArray = data.city.coord.lon.toString().split('.');
+  let latArray = city.coord.lat.toString().split('.');
+  let lonArray = city.coord.lon.toString().split('.');
 
   let latitude = document.getElementsByClassName('js-location-latitude')[0];
   latitude.innerText = latArray[0] + '\xB0' + latArray[1].substr(0, 2) + '\'';
@@ -12,7 +12,7 @@ export function updateLocation(data, lang = 'en') {
   longitude.innerText = lonArray[0] + '\xB0' + lonArray[1].substr(0, 2) + '\'';
 
   let iframe = document.getElementsByClassName('js-map')[0];
-  iframe.src = 'https://www.google.com/maps/embed/v1/view?center=' + data.city.coord.lat + ',' + data.city.coord.lon + '&zoom=10&key=AIzaSyBWWZnqHV3asW7DM3yCQ0dxSHjj_J9LkwE&language=' + lang;
+  iframe.src = 'https://www.google.com/maps/embed/v1/view?center=' + city.coord.lat + ',' + city.coord.lon + '&zoom=10&key=AIzaSyBWWZnqHV3asW7DM3yCQ0dxSHjj_J9LkwE&language=' + lang;
 }
 
 

@@ -8,9 +8,10 @@ export default {
   longitudeLabel: 'Longitude',
   mon: 'MONDAY',
   tue: 'TUESDAY',
-  wen: 'WEDNESDAY',
+  wed: 'WEDNESDAY',
   thu: 'THURSDAY',
   fri: 'FRIDAY',
   sat: 'SATURDAY',
   sun: 'SUNDAY',
+  locationNotFound: 'Location not found',
 }
