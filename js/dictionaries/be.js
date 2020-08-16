@@ -2,6 +2,7 @@
   feelsLikeLabel: "АДЧУВАЕЦЦА ЯК",
   windLabel: "ВЕЦЕР",
   humidityLabel: "ВІЛЬГОТНАСЦЬ",
+  windSpeedLabel: "М/С",
   searchPlaceholder: "Знайсці горад ці індэкс",
   searchButton: "Пошук",
   latitudeLabel: "Шырата",

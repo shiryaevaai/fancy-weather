@@ -9,6 +9,10 @@ export function updateLabels(lang = 'en') {
   label = dictionaries[lang].windLabel;
   windLabel.innerText = label;
 
+  let windSpeedLabel = document.getElementsByClassName('js-wind-speed')[0];
+  label = dictionaries[lang].windSpeedLabel;
+  windSpeedLabel.innerText = label;
+
   let humidityLabel = document.getElementsByClassName('js-humidity-title')[0];
   label = dictionaries[lang].humidityLabel;
   humidityLabel.innerText = label;

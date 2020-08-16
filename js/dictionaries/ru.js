@@ -2,6 +2,7 @@ export default {
   feelsLikeLabel: "ОЩУЩАЕТСЯ КАК",
   windLabel: "ВЕТЕР",
   humidityLabel: "ВЛАЖНОСТЬ",
+  windSpeedLabel: "М/С",
   searchPlaceholder: "Найти город или индекс",
   searchButton: "ПОИСК",
   latitudeLabel: "Широта",

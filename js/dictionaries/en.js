@@ -2,6 +2,7 @@ export default {
   feelsLikeLabel: "FEELS LIKE",
   windLabel: "WIND",
   humidityLabel: "HUMIDITY",
+  windSpeedLabel: "M/S",
   searchPlaceholder: "Search city or ZIP",
   searchButton: "SEARCH",
   latitudeLabel: "Latitude",
