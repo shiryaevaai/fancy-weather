@@ -6,14 +6,12 @@
     @include media-tablet {
         padding: 0 10px;
     }
-
 }
 
 .columns {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*align-content: flex-start;*/
     margin: 0 auto;
 }
 
@@ -22,8 +20,6 @@
     position: relative;
     margin-left: 0;
 
-    /*text-align: center;*/
-    
     @include media-laptop {
         flex-basis: 53%;
     }
@@ -42,7 +38,6 @@
     position: relative;
     margin-right: 0;
 
-    /*text-align: center;*/
     @include media-laptop {
         flex-basis: 38%;
     }

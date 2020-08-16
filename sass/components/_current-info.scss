@@ -18,7 +18,6 @@
 .current-weather__details {
     @extend %font-semibold;
     @include font($size: 2.2rem, $height: 3.7rem);
-    /*display: inline-block;*/
 }
 
 .current-location {

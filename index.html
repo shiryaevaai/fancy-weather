@@ -15,9 +15,9 @@
 		<h1>Fancy weather</h1>
 	</header>
 	
-	<div class="wrapper">
+	<div class="wrapper hide">
 		<div class="columns">
-			<div class="navigation column-left">
+			<div class="navigation nav-column-left">
 				<div class="btn-group" role="group" aria-label="">
 					<button id="update-background-button" type="button" class="btn btn-secondary btn-refresh">
 						<img src="assets/icons/spinner.svg" alt="Refresh background" class="button-icon" title="Refresh background">
@@ -39,7 +39,7 @@
 					<button id="switch-to-c" type="button" class="btn btn-secondary btn-degree">°C</button>
 				</div>
 			</div>
-			<div class="search-container column-right">
+			<div class="search-container nav-column-right">
 				<form action="/" method="post" class="form-group">
 					<input type="text" name="name" placeholder="Search city" class="search-input js-search-input" />
 					<input type="submit" name="search" id="search-button" value="SEARCH" class="btn btn-secondary" />
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="wrapper">
+	<div class="wrapper hide">
 			<div class="columns">
 				<div class="column-left">
 					<div class="main-info">

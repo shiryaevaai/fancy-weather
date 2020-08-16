@@ -47,17 +47,15 @@ async function main() {
     let ipInfo = await ipinfo.getIPInfo();
     console.log(ipInfo);
     storage.set('location', ipInfo.city);
-    //let weatherInfo = await openweathermap.getWeatherInfoByCityName(ipInfo.city, lang)
-    //console.log(weatherInfo);
 
     await search(lang, ipInfo.city);
 
-    //if (degrees == '"C"') {
-    //  switchToCButton.classList.add("btn-selected");
-    //}
-    //else {
-    //  switchToFButton.classList.add("btn-selected");
-    //}
+    setTimeout(() => {
+      let wrappers = document.getElementsByClassName('wrapper');
+      for (let item of wrappers) {
+        item.classList.remove("hide");
+      }
+    }, 3000);
 
     document.getElementById("switch-language-items").onclick = function (event) {
       let newLang = lang;
@@ -83,8 +81,6 @@ async function main() {
     
     switchToFButton.onclick = function (event) {
       degrees = '"F"';
-      //switchToFButton.classList.add("btn-selected");
-      //switchToCButton.classList.remove("btn-selected");
 
       if (degrees != storage.get('degrees', '"C"')) {
         storage.set('degrees', degrees);
@@ -94,8 +90,6 @@ async function main() {
 
     switchToCButton.onclick = function (event) {
       degrees = '"C"';
-      //switchToCButton.classList.add("btn-selected");
-      //switchToFButton.classList.remove("btn-selected");
 
       if (degrees != storage.get('degrees', '"C"')) {
         storage.set('degrees', degrees);
@@ -190,8 +184,6 @@ async function switchLanguage(newLang) {
   lang = newLang;
   let locationName = storage.get('location', 'Moscow');
   await search(lang, locationName);
-  //let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
-  //updatePageData(weatherInfo, lang, false);
 }
 
 main();

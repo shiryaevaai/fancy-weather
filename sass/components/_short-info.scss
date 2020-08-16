@@ -26,9 +26,6 @@
     @include media-tablet {
         @include font($size: 3.5rem, $height: 7rem);
     }
-    /*@include media-mobile {
-        @include font($size: 4rem, $height: 5.8rem);
-    }*/
 }
 
 .short-info__temperature, .short-info__icon {
@@ -42,15 +39,11 @@
 }
 
 .short-info__icon img {
-    width: 88px;
-    height: 88px;
+    width: 86px;
+    height: 86px;
 
     @include media-laptop {
-        width: 65px;
-        height: 65px;
+        width: 63px;
+        height: 63px;
     }
-}
-
-.current-weather__day {
-
 }

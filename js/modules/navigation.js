@@ -1,6 +1,5 @@
 import * as unsplash from '../api/unsplash.js';
 import { get } from '../storage.js';
-import { set } from '../storage.js';
 import * as degreeConverter from '../utils/degreeConverter.js';
 
 

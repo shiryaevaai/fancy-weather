@@ -415,7 +415,7 @@ body {
   margin: auto;
   padding: 0 73px;
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .wrapper {
     padding: 0 10px;
   }
@@ -425,7 +425,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /*align-content: flex-start;*/
   margin: 0 auto;
 }
 
@@ -433,14 +432,13 @@ body {
   display: flex;
   position: relative;
   margin-left: 0;
-  /*text-align: center;*/
 }
 @media (max-width: 1197px) {
   .column-left {
     flex-basis: 53%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .column-left {
     flex-basis: 100%;
   }
@@ -455,14 +453,13 @@ body {
   display: flex;
   position: relative;
   margin-right: 0;
-  /*text-align: center;*/
 }
 @media (max-width: 1197px) {
   .column-right {
     flex-basis: 38%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .column-right {
     flex-basis: 100%;
   }
@@ -494,7 +491,7 @@ body {
 .layout-3-column > * {
   flex-basis: 30%;
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .layout-3-column {
     display: flex;
     flex-wrap: wrap;
@@ -518,20 +515,54 @@ body {
   flex-basis: 50%;
 }
 
-/*.navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    margin: 0 auto;
-}*/
+.nav-column-left {
+  display: flex;
+  position: relative;
+  margin-left: 0;
+}
+@media (max-width: 1197px) {
+  .nav-column-left {
+    flex-basis: 53%;
+  }
+}
+@media (max-width: 920px) {
+  .nav-column-left {
+    flex-basis: 53%;
+  }
+}
+@media (max-width: 320px) {
+  .nav-column-left {
+    flex-basis: 100%;
+  }
+}
+
+.nav-column-right {
+  display: flex;
+  position: relative;
+  margin-right: 0;
+}
+@media (max-width: 1197px) {
+  .nav-column-right {
+    flex-basis: 38%;
+  }
+}
+@media (max-width: 920px) {
+  .nav-column-right {
+    flex-basis: 38%;
+  }
+}
+@media (max-width: 320px) {
+  .nav-column-right {
+    flex-basis: 100%;
+  }
+}
+
 .navigation {
   padding-top: 40px;
 }
 
 .search-container {
   padding-top: 40px;
-  /*align-content: flex-end;*/
   position: relative;
   display: flex;
   text-align: left;
@@ -568,22 +599,6 @@ body {
   text-decoration: none;
 }
 
-/*.btn-secondary.disabled, .btn-secondary:disabled {
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
-.show > .btn-secondary.dropdown-toggle {
-    color: #fff;
-    background-color: #545b62;
-    border-color: #4e555b;
-}*/
-/*.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-secondary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
-}*/
 .dropdown-menu {
   padding: 0rem;
 }
@@ -667,7 +682,6 @@ body {
   line-height: 3.7rem;
   font-weight: normal;
   font-style: normal;
-  /*display: inline-block;*/
 }
 
 .current-location {
@@ -711,7 +725,7 @@ body {
     font-style: normal;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .temperature-num {
     font-size: 15rem;
     line-height: 15rem;
@@ -735,7 +749,7 @@ body {
   font-style: normal;
   display: inline-block;
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .temperature-degree {
     font-size: 5rem;
     line-height: 5rem;
@@ -772,9 +786,6 @@ body {
   line-height: 7.8rem;
   font-weight: normal;
   font-style: normal;
-  /*@include media-mobile {
-      @include font($size: 4rem, $height: 5.8rem);
-  }*/
 }
 @media (max-width: 1197px) {
   .short-info__temperature {
@@ -784,7 +795,7 @@ body {
     font-style: normal;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .short-info__temperature {
     font-size: 3.5rem;
     line-height: 7rem;
@@ -800,13 +811,13 @@ body {
 }
 
 .short-info__icon img {
-  width: 88px;
-  height: 88px;
+  width: 86px;
+  height: 86px;
 }
 @media (max-width: 1197px) {
   .short-info__icon img {
-    width: 65px;
-    height: 65px;
+    width: 63px;
+    height: 63px;
   }
 }
 
@@ -833,11 +844,6 @@ body {
   font-style: normal;
   padding-top: 20px;
   padding-bottom: 30px;
-  /*text-align: right;
-
-  @include media-tablet {
-      text-align: left;
-  }*/
 }
 
 /*# sourceMappingURL=style.css.map */
