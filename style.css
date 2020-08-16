@@ -369,7 +369,7 @@ body {
   font-family: "Montserrat-Black", Arial, sans-serif;
 }
 
-.coordinates-container, .short-info, .current-location > h2, .current-weather__details, .current-weather__temperature {
+.coordinates-container, .short-info, .current-location > h2, .current-weather__details, .current-weather__temperature, .search-container, .navigation {
   font-family: "Montserrat-Semibold", Arial, sans-serif;
 }
 
@@ -638,6 +638,12 @@ body {
   border-bottom-left-radius: 5px;
   border-color: #6c757d;
   border-style: solid;
+}
+
+.search-input:focus {
+  border-width: 1px;
+  background-color: darkseagreen;
+  outline: none;
 }
 
 .current-weather {

@@ -8,9 +8,11 @@
 
 .navigation {
     padding-top: 40px;
+    @extend %font-semibold;
 }
 
 .search-container {
+    @extend %font-semibold;
     padding-top: 40px;
     /*align-content: flex-end;*/
     position: relative;
@@ -126,4 +128,10 @@
     border-bottom-left-radius: 5px;
     border-color: #6c757d;
     border-style: solid;
+}
+
+.search-input:focus {
+    border-width: 1px;
+    background-color: darkseagreen;
+    outline: none;
 }

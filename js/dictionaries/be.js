@@ -4,7 +4,7 @@
   humidityLabel: "ВІЛЬГОТНАСЦЬ",
   windSpeedLabel: "М/С",
   searchPlaceholder: "Знайсці горад ці індэкс",
-  searchButton: "Пошук",
+  searchButton: "ПОШУК",
   latitudeLabel: "Шырата",
   longitudeLabel: "Даўгата",
   mon: "ПАНЯДЗЕЛАК",
