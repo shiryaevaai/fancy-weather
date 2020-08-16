@@ -14,6 +14,7 @@ var lang = storage.get('lang', '"en"');
 var degrees = storage.get('degrees', '"C"');
 
 var updateBackgroundButton;
+var switchLanguageButton;
 var switchToFButton;
 var switchToCButton;
 var searchButton;
@@ -23,19 +24,33 @@ async function main() {
   try {
     navigation.updateBackground();
 
-    let ipInfo = await ipinfo.getIPInfo();
-    console.log(ipInfo);
-    let weatherInfo = await openweathermap.getWeatherInfoByCityName(ipInfo.city, lang)
-    console.log(weatherInfo);
-
-    updatePageData(weatherInfo);
-
     updateBackgroundButton = document.getElementById("update-background-button");
     updateBackgroundButton.onclick = navigation.updateBackground;
 
+    switchLanguageButton = document.getElementById("switch-language");
     switchToFButton = document.getElementById("switch-to-f");
     switchToCButton = document.getElementById("switch-to-c");
     searchButton = document.getElementById("search-button");
+
+    switch (lang) {
+      case 'ru':
+        switchLanguageButton.innerText = 'RU';
+        break;
+      case 'en':
+        switchLanguageButton.innerText = 'EN';
+        break;
+      case 'be':
+        switchLanguageButton.innerText = 'BE';
+        break;
+    }
+
+    let ipInfo = await ipinfo.getIPInfo();
+    console.log(ipInfo);
+    storage.set('location', ipInfo.city);
+    let weatherInfo = await openweathermap.getWeatherInfoByCityName(ipInfo.city, lang)
+    console.log(weatherInfo);
+
+    updatePageData(weatherInfo, lang);
 
     //if (degrees == '"C"') {
     //  switchToCButton.classList.add("btn-selected");
@@ -44,6 +59,27 @@ async function main() {
     //  switchToFButton.classList.add("btn-selected");
     //}
 
+    document.getElementById("switch-language-items").onclick = function (event) {
+      let newLang = '';
+
+      if (event.target.matches('#en-item')) {
+        newLang = 'en';
+        switchLanguageButton.innerText = 'EN';
+      }
+      if (event.target.matches('#ru-item')) {
+        newLang = 'ru';
+        switchLanguageButton.innerText = 'RU';
+      }
+      if (event.target.matches('#be-item')) {
+        newLang = 'be';
+        switchLanguageButton.innerText = 'BE';
+      }
+
+      if (newLang !== lang) {
+        switchLanguage(newLang);
+      }
+    };
+    
     switchToFButton.onclick = function (event) {
       degrees = '"F"';
       //switchToFButton.classList.add("btn-selected");
@@ -76,11 +112,13 @@ async function main() {
   }
 }
 
-async function updatePageData(weatherInfo, isPageOverload = true) {
+async function updatePageData(weatherInfo, lang = 'en', isPageOverload = true) {
 
   if (!isPageOverload) {
     navigation.updateBackground();
   }
+
+  language.updateLabels(lang);
 
   location.updateLocation(weatherInfo.city);
   weather.updateWeatherDetailed(weatherInfo.list[0], lang, degrees);
@@ -132,11 +170,20 @@ async function search(lang) {
         locationName = '';
     }
 
+    storage.set('location', locationName);
     let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
 
     //let weatherInfo = await openweathermap.getWeatherInfoByCoords(location.geometry.lat, location.geometry.lng, lang);
-    updatePageData(weatherInfo, false);
+    updatePageData(weatherInfo, lang, false);
   }
+}
+
+async function switchLanguage(newLang) {
+  storage.set('lang', newLang);
+  lang = newLang;
+  let locationName = storage.get('location', 'Moscow');
+  let weatherInfo = await openweathermap.getWeatherInfoByCityName(locationName, lang);
+  updatePageData(weatherInfo, lang, false);
 }
 
 main();
