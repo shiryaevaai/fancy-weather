@@ -156,6 +156,9 @@ async function search(lang, query = '') {
       case 'city':
         locationName = location.components.city;
         break;
+      case 'county':
+        locationName = location.components.county;
+        break;
       case 'village':
         if (location.components.village != undefined) {
           locationName = location.components.village;
